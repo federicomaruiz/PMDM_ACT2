@@ -1,0 +1,17 @@
+<resources>
+
+    <string name="app_name">Navegacion</string>
+    <string name="hello_blank_fragment">pruebaaa</string>
+
+
+    <string name="title_login">Bienvenido</string>
+    <string name="name_placeholder">Escribe tu nombre</string>
+    <string name="title_categories">Selecciona una categoría</string>
+    <string name="check_all">Muéstrame todas</string>
+    <string name="check_sports">Deportes</string>
+    <string name="check_technology">Tecnología</string>
+    <string name="btn_continue">Continuar</string>
+    <string name="tv_title_welcome">%1$s, puede que encuentres información sensible. Necesitamos que confirmes que eres mayor de edad</string>
+    <string name="age">¿Eres mayor de edad?</string>
+    <string name="btn_feed">LLevame al feed</string>
+</resources>
