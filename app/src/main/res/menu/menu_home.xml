@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/generalNewsFragment"
+        android:title="@string/all"
+        android:icon="@drawable/ic_home"/>
+    <item
+        android:id="@+id/sportNewsFragment"
+        android:title="@string/check_sports"
+        android:icon="@drawable/ic_futbol"/>
+    <item
+        android:id="@+id/technologyNewsFragment"
+        android:title="@string/check_technology"
+        android:icon="@drawable/ic_technology"/>
+</menu>

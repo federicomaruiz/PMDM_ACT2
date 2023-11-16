@@ -8,6 +8,7 @@
     <string name="name_placeholder">Escribe tu nombre</string>
     <string name="title_categories">Selecciona una categoría</string>
     <string name="check_all">Muéstrame todas</string>
+    <string name="all">Principal</string>
     <string name="check_sports">Deportes</string>
     <string name="check_technology">Tecnología</string>
     <string name="btn_continue">Continuar</string>

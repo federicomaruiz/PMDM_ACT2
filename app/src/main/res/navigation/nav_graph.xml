@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/generalNewsFragment"
+    >
+
+    <fragment
+        android:id="@+id/generalNewsFragment"
+        android:name="com.utad.navegacion.GeneralNewsFragment"
+        android:label="fragment_general_news"
+        tools:layout="@layout/fragment_general_news" />
+    <fragment
+        android:id="@+id/sportNewsFragment"
+        android:name="com.utad.navegacion.SportNewsFragment"
+        android:label="fragment_sport_news"
+        tools:layout="@layout/fragment_sport_news" />
+    <fragment
+        android:id="@+id/technologyNewsFragment"
+        android:name="com.utad.navegacion.TechnologyNewsFragment"
+        android:label="fragment_technology_news"
+        tools:layout="@layout/fragment_technology_news" />
+</navigation>
