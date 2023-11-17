@@ -1,16 +1,13 @@
 package com.utad.navegacion
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.utad.navegacion.data.getSports
-import com.utad.navegacion.data.getTech
-import com.utad.navegacion.databinding.FragmentLoginBinding
 import com.utad.navegacion.databinding.FragmentSportNewsBinding
 import com.utad.navegacion.recyclerView.New
 import com.utad.navegacion.recyclerView.RecyclerViewAdapter
@@ -35,11 +32,16 @@ class SportNewsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.rvSports.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL,false)
         val list = getSports()
-        adapter = RecyclerViewAdapter(list)
+        adapter = RecyclerViewAdapter(list) {id -> navigateToDetail(id)}
         binding.rvSports.adapter = adapter
 
     }
 
+    private fun navigateToDetail(id: String) {
+        val intent = Intent(requireContext(), DetailNewsActivity::class.java)
+        intent.putExtra("title", id)
+        startActivity(intent)
+    }
 
 
 }

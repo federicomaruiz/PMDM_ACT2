@@ -9,13 +9,21 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
 
-class RecyclerViewAdapter(private val itemList: List<New>): RecyclerView.Adapter<RecyclerViewAdapter.ItemViewHolder>() {
+class RecyclerViewAdapter(
+
+    private val itemList: List<New>,
+
+    val actionClick: (titleId: String) -> Unit
+
+
+): RecyclerView.Adapter<RecyclerViewAdapter.ItemViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemBinding.inflate(inflater,parent,false)
         return ItemViewHolder(binding)
     }
+
 
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
@@ -25,6 +33,7 @@ class RecyclerViewAdapter(private val itemList: List<New>): RecyclerView.Adapter
         Glide.with(holder.binding.root)
             .load(item.image)
             .into(holder.binding.ivItemImage)
+             holder.binding.root.setOnClickListener { actionClick(item.title) }
     }
 
     override fun getItemCount(): Int {
