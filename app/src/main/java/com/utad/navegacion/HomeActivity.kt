@@ -2,10 +2,12 @@ package com.utad.navegacion
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.recyclerview.widget.RecyclerView
 import com.utad.navegacion.databinding.ActivityHomeBinding
 import kotlin.system.exitProcess
 
@@ -17,12 +19,14 @@ class HomeActivity : AppCompatActivity() {
     lateinit var navController: NavController
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         var checkSelected : String = recoverData()
         setBottomNavigation(checkSelected)
+
 
     }
 
@@ -38,7 +42,6 @@ class HomeActivity : AppCompatActivity() {
             binding.bnvNews.setupWithNavController(navController)
         }
 
-
         val startDestination = when (checkSelected) {
             "Muéstrame todas" -> R.id.generalNewsFragment
             "Deportes" -> R.id.sportNewsFragment
@@ -48,7 +51,23 @@ class HomeActivity : AppCompatActivity() {
 
         navController.navigate(startDestination)
 
-
+        binding.bnvNews.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.generalNewsFragment -> {
+                    navController.navigate(R.id.generalNewsFragment)
+                    true
+                }
+                R.id.sportNewsFragment -> {
+                    navController.navigate(R.id.sportNewsFragment)
+                    true
+                }
+                R.id.technologyNewsFragment -> {
+                    navController.navigate(R.id.technologyNewsFragment)
+                    true
+                }
+                else -> false
+            }
+        }
 
     }
 

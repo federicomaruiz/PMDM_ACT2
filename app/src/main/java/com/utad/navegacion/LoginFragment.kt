@@ -58,8 +58,6 @@ class LoginFragment : Fragment() {
     }
 
 
-
-
     private fun checkValue() {
         checkBoxAll.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
@@ -106,12 +104,10 @@ class LoginFragment : Fragment() {
 
     }
 
-    /*
-    * Mirar si envio los datos con un bundle
-    * */
 
     private fun navigateToWelcome() {
         nameValue = etName.text.toString()
+        nameValue = nameValue.toLowerCase().capitalize()
         val bundle =Bundle() // Cro un bundle
         bundle.putString("name",nameValue) // inserto los datos
         bundle.putString("category",categoryValue)

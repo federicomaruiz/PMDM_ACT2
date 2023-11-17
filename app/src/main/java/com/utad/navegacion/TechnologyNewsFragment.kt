@@ -5,14 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.utad.navegacion.databinding.FragmentTechnologyNewsBinding
-import com.utad.navegacion.databinding.FragmentWelcomeBinding
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.utad.navegacion.data.getSports
+import com.utad.navegacion.data.getTech
+import com.utad.navegacion.recyclerView.RecyclerViewAdapter
+
 
 class TechnologyNewsFragment : Fragment() {
 
     private lateinit var _binding:  FragmentTechnologyNewsBinding
     private val binding: FragmentTechnologyNewsBinding get() = _binding
+
+    private lateinit var adapter : RecyclerViewAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,7 +30,13 @@ class TechnologyNewsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Toast.makeText(requireContext(), "Tecnologia", Toast.LENGTH_SHORT).show()
+        binding.rvTecnologia.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL,false)
+        val list = getTech()
+        adapter = RecyclerViewAdapter(list)
+        binding.rvTecnologia.adapter = adapter
+
+
+
     }
 
 

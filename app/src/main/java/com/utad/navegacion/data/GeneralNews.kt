@@ -1,7 +1,10 @@
 package com.utad.navegacion.data
 
-import com.utad.navegacion.New
+import com.utad.navegacion.recyclerView.New
 
+public fun getAllNews(): List<New> {
+    return generalNews
+}
 
 val generalNews = listOf<New>(
     New(

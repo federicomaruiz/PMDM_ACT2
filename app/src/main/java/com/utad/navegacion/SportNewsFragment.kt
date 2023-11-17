@@ -5,9 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.utad.navegacion.data.getSports
+import com.utad.navegacion.data.getTech
 import com.utad.navegacion.databinding.FragmentLoginBinding
 import com.utad.navegacion.databinding.FragmentSportNewsBinding
+import com.utad.navegacion.recyclerView.New
+import com.utad.navegacion.recyclerView.RecyclerViewAdapter
 
 class SportNewsFragment : Fragment() {
 
@@ -15,6 +21,7 @@ class SportNewsFragment : Fragment() {
 
     private val binding : FragmentSportNewsBinding get() = _binding
 
+    private lateinit var adapter : RecyclerViewAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,7 +33,11 @@ class SportNewsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Toast.makeText(requireContext(), "deporets", Toast.LENGTH_SHORT).show()
+        binding.rvSports.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL,false)
+        val list = getSports()
+        adapter = RecyclerViewAdapter(list)
+        binding.rvSports.adapter = adapter
+
     }
 
 

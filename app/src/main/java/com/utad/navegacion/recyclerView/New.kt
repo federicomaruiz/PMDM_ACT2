@@ -1,4 +1,4 @@
-package com.utad.navegacion
+package com.utad.navegacion.recyclerView
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

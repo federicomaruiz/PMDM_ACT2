@@ -1,6 +1,11 @@
 package com.utad.navegacion.data
 
-import com.utad.navegacion.New
+import com.utad.navegacion.recyclerView.New
+
+
+public fun getTech(): List<New> {
+    return techNews
+}
 
 val techNews = listOf<New>(
     New(
