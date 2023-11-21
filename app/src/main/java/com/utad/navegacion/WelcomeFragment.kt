@@ -10,7 +10,6 @@ import android.widget.Button
 import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
-import com.utad.navegacion.databinding.FragmentLoginBinding
 import com.utad.navegacion.databinding.FragmentWelcomeBinding
 
 class WelcomeFragment : Fragment() {
@@ -53,8 +52,10 @@ class WelcomeFragment : Fragment() {
     private fun changueSwitch() {
         switchAge.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
+                Toast.makeText(requireContext(), "Confirmas", Toast.LENGTH_SHORT).show()
                 btnFeed.isEnabled = true
             } else {
+                Toast.makeText(requireContext(), "No confirmas", Toast.LENGTH_SHORT).show()
                 btnFeed.isEnabled = false
             }
         }
@@ -80,7 +81,6 @@ class WelcomeFragment : Fragment() {
             if (bundle.containsKey("name") || bundle.containsKey("category")) {
                 name = bundle.getString("name").toString()
                 category = bundle.getString("category").toString()
-                Toast.makeText(requireContext(), "$name", Toast.LENGTH_SHORT).show()
                 setName()
 
             }

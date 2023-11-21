@@ -6,18 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.utad.navegacion.data.getAllNews
 import com.utad.navegacion.data.getSports
 import com.utad.navegacion.data.getTech
-import com.utad.navegacion.databinding.FragmentGeneralNewsBinding
 import com.utad.navegacion.recyclerView.New
 import com.utad.navegacion.recyclerView.RecyclerViewAdapter
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import android.view.animation.AnimationUtils
+import com.utad.navegacion.databinding.FragmentGeneralNewsBinding
 
 class GeneralNewsFragment : Fragment() {
 

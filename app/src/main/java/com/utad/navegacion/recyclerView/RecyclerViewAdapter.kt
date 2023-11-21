@@ -4,9 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.utad.navegacion.databinding.ItemBinding
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
+import com.utad.navegacion.databinding.ItemBinding
 
 
 class RecyclerViewAdapter(

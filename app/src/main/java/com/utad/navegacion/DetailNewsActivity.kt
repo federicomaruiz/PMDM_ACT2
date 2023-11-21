@@ -1,17 +1,14 @@
 package com.utad.navegacion
 
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.utad.navegacion.data.getAllNews
 import com.utad.navegacion.data.getSports
 import com.utad.navegacion.data.getTech
 import com.utad.navegacion.databinding.ActivityDetailBinding
-import com.utad.navegacion.databinding.ActivityHomeBinding
 
 class DetailNewsActivity : AppCompatActivity() {
 

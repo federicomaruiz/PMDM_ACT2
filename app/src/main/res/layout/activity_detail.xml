@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frame_detail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/md_theme_light_background"
     android:padding="15dp"
     tools:context=".DetailNewsActivity">
 
@@ -19,15 +20,16 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp">
 
             <TextView
                 android:id="@+id/tv_detail_title"
+                style="@style/title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="TextView"
-                style="@style/title"
+                android:hint="title"
                 app:layout_constraintBottom_toTopOf="@+id/image_detail"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +53,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="TextView"
+                android:hint="author"
+                android:textStyle="italic"
+                android:textSize="15dp"
+                android:textColor="@color/md_theme_light_onSurfaceVariant"
                 app:layout_constraintBottom_toTopOf="@+id/tv_detail_description"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +67,9 @@
                 android:id="@+id/tv_detail_description"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:layout_marginBottom="16dp"
+                android:hint="description"
+                android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

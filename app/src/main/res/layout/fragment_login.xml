@@ -2,9 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
+    android:id="@+id/frame_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/md_theme_light_background"
     tools:context=".LoginFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -36,17 +37,17 @@
 
     <EditText
         android:id="@+id/et_name"
-        android:layout_width="327dp"
-        android:layout_height="47dp"
+        android:layout_width="319dp"
+        android:layout_height="61dp"
         android:ems="10"
         android:hint="@string/name_placeholder"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.642"
+        app:layout_constraintHorizontal_bias="0.586"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.072" />
+        app:layout_constraintVertical_bias="0.079" />
 
     <TextView
         android:id="@+id/textView"
@@ -100,8 +101,9 @@
         style="@style/btn_primary"
         android:layout_width="171dp"
         android:layout_height="48dp"
-        android:text="@string/btn_continue"
+        android:backgroundTint="@color/md_theme_light_tertiary"
         android:enabled="false"
+        android:text="@string/btn_continue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

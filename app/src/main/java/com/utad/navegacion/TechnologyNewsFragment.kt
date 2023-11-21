@@ -6,13 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.lifecycleScope
-import com.utad.navegacion.databinding.FragmentTechnologyNewsBinding
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.utad.navegacion.data.getTech
 import com.utad.navegacion.recyclerView.RecyclerViewAdapter
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import com.utad.navegacion.databinding.FragmentTechnologyNewsBinding
 
 
 class TechnologyNewsFragment : Fragment() {

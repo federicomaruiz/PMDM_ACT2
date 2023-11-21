@@ -8,9 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.utad.navegacion.data.getSports
-import com.utad.navegacion.databinding.FragmentSportNewsBinding
-import com.utad.navegacion.recyclerView.New
 import com.utad.navegacion.recyclerView.RecyclerViewAdapter
+import com.utad.navegacion.databinding.FragmentSportNewsBinding
 
 class SportNewsFragment : Fragment() {
 

@@ -9,10 +9,7 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
-import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_FADE
-import androidx.lifecycle.findViewTreeViewModelStoreOwner
-import com.utad.navegacion.databinding.ActivityMainBinding
 import com.utad.navegacion.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
