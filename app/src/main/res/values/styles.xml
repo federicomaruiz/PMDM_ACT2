@@ -8,7 +8,7 @@
     <style name="description" parent="title">
         <item name="android:textSize">20dp</item>
     </style>
-    <style name="btn_primary">
+    <style name="btn_primary_app">
         <item name="android:background">@color/btn_color</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textSize">18sp</item>
