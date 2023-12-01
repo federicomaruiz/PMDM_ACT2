@@ -17,23 +17,18 @@ class HomeActivity : AppCompatActivity() {
     lateinit var navController: NavController
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        var checkSelected : String = recoverData()
+        var checkSelected: String = recoverData()
         setBottomNavigation(checkSelected)
-
-
     }
 
-
-
     private fun setBottomNavigation(checkSelected: String) {
-      val navHostFragment: NavHostFragment =
-          supportFragmentManager.findFragmentById(binding.nhfView.id) as NavHostFragment
-      navController = navHostFragment.findNavController()
+        val navHostFragment: NavHostFragment =
+            supportFragmentManager.findFragmentById(binding.nhfView.id) as NavHostFragment
+        navController = navHostFragment.findNavController()
 
 
         if (navHostFragment != null) {
@@ -55,14 +50,17 @@ class HomeActivity : AppCompatActivity() {
                     navController.navigate(R.id.generalNewsFragment)
                     true
                 }
+
                 R.id.sportNewsFragment -> {
                     navController.navigate(R.id.sportNewsFragment)
                     true
                 }
+
                 R.id.technologyNewsFragment -> {
                     navController.navigate(R.id.technologyNewsFragment)
                     true
                 }
+
                 else -> false
             }
         }
@@ -77,4 +75,4 @@ class HomeActivity : AppCompatActivity() {
     }
 
 
-    }
+}

@@ -16,4 +16,7 @@
     <string name="age">¿Eres mayor de edad?</string>
     <string name="btn_feed">LLevame al feed</string>
     <string name="btn_show">Muéstrame más</string>
+    <string name="title_placeholder">titulo</string>
+    <string name="author_placeholder">author</string>
+    <string name="description_placeholder">descripcion</string>
 </resources>

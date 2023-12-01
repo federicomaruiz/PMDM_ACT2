@@ -17,14 +17,8 @@ class LoginFragment : Fragment() {
     private lateinit var _binding: FragmentLoginBinding
     private val binding: FragmentLoginBinding get() = _binding
 
-    private lateinit var checkBoxAll: CheckBox
-    private lateinit var checkBoxSports: CheckBox
-    private lateinit var checkBoxTechnology: CheckBox
-    private lateinit var etName: EditText
-    private lateinit var btnContinue: Button
     private lateinit var categoryValue: String
     private lateinit var nameValue: String
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,79 +30,71 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initComponents()
         checkValue()
         checkInformation()
 
     }
 
     private fun checkInformation() {
-        btnContinue.setOnClickListener {
-            if ((checkBoxAll.isChecked || checkBoxSports.isChecked || checkBoxTechnology.isChecked) && !etName.text.toString()
+        binding.btnContinue.setOnClickListener {
+            if ((binding.cbAll.isChecked || binding.cbSports.isChecked || binding.cbTechnology.isChecked) && !binding.etName.text.toString()
                     .isNullOrEmpty()
             ) {
                 navigateToWelcome()
             } else {
-                Toast.makeText(requireContext(), "Faltan completar datos", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Faltan completar datos", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
     }
-
 
     private fun checkValue() {
-        checkBoxAll.setOnCheckedChangeListener { _, isChecked ->
+        binding.cbAll.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                checkBoxSports.isChecked = false
-                checkBoxTechnology.isChecked = false
-                categoryValue = checkBoxAll.text.toString()
+                binding.cbSports.isChecked = false
+                binding.cbTechnology.isChecked = false
+                categoryValue = binding.cbAll.text.toString()
                 binding.btnContinue.isEnabled = true
             } else {
                 binding.btnContinue.isEnabled = false
             }
         }
 
-        checkBoxSports.setOnCheckedChangeListener { _, isChecked ->
+        binding.cbSports.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                checkBoxAll.isChecked = false
-                checkBoxTechnology.isChecked = false
-                categoryValue = checkBoxSports.text.toString()
+                binding.cbAll.isChecked = false
+                binding.cbTechnology.isChecked = false
+                categoryValue = binding.cbSports.text.toString()
                 binding.btnContinue.isEnabled = true
             } else {
                 binding.btnContinue.isEnabled = false
             }
         }
 
-        checkBoxTechnology.setOnCheckedChangeListener { _, isChecked ->
+        binding.cbTechnology.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                checkBoxAll.isChecked = false
-                checkBoxSports.isChecked = false
-                categoryValue = checkBoxTechnology.text.toString()
+                binding.cbAll.isChecked = false
+                binding.cbSports.isChecked = false
+                categoryValue = binding.cbTechnology.text.toString()
                 binding.btnContinue.isEnabled = true
             } else {
                 binding.btnContinue.isEnabled = false
             }
 
         }
-    }
-
-    private fun initComponents() {
-        checkBoxAll = binding.cbAll
-        checkBoxSports = binding.cbSports
-        checkBoxTechnology = binding.cbTechnology
-        etName = binding.etName
-        btnContinue = binding.btnContinue
-
-
     }
 
 
     private fun navigateToWelcome() {
-        nameValue = etName.text.toString()
+        nameValue = binding.etName.text.toString()
         nameValue = nameValue.toLowerCase().capitalize()
-        val bundle =Bundle() // Cro un bundle
-        bundle.putString("name",nameValue) // inserto los datos
-        bundle.putString("category",categoryValue)
-        parentFragmentManager.setFragmentResult("result",bundle) // le añado el bundle al parent manager para poder leerlo en el main
+        val bundle = Bundle() // Cro un bundle
+        bundle.putString("name", nameValue) // inserto los datos
+        bundle.putString("category", categoryValue)
+        parentFragmentManager.setFragmentResult(
+            "result",
+            bundle
+        ) // le añado el bundle al parent manager para poder leerlo en el main
         val fragment = WelcomeFragment()
         val transaction = parentFragmentManager.beginTransaction()
         transaction.setReorderingAllowed(true)

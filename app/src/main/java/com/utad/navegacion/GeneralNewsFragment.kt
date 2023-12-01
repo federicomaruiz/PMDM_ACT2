@@ -20,32 +20,29 @@ class GeneralNewsFragment : Fragment() {
 
     private lateinit var _binding: FragmentGeneralNewsBinding
 
-    private val binding : FragmentGeneralNewsBinding get() = _binding
+    private val binding: FragmentGeneralNewsBinding get() = _binding
 
-    private lateinit var adapter : RecyclerViewAdapter
-
-    private lateinit var btnWell : ExtendedFloatingActionButton
-
+    private lateinit var adapter: RecyclerViewAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentGeneralNewsBinding.inflate(inflater,container,false)
+        _binding = FragmentGeneralNewsBinding.inflate(inflater, container, false)
         return _binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.rvGeneral.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL,false)
+        binding.rvGeneral.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         val list = getAllNews()
-        btnWell = binding.btnWell
         loadRecyclerView(list)
         listenBtnWell()
     }
 
     private fun loadRecyclerView(list: List<New>) {
-        adapter = RecyclerViewAdapter(list) {id -> navigateToDetail(id)}
+        adapter = RecyclerViewAdapter(list) { id -> navigateToDetail(id) }
         binding.rvGeneral.adapter = adapter
         val fadeAnimation = AnimationUtils.loadAnimation(context, R.anim.animation)
         binding.rvGeneral.startAnimation(fadeAnimation)
@@ -53,7 +50,7 @@ class GeneralNewsFragment : Fragment() {
     }
 
     private fun listenBtnWell() {
-        btnWell.setOnClickListener {
+        binding.btnWell.setOnClickListener {
             val list = getAllNews() + getSports() + getTech()
             loadRecyclerView(list)
 

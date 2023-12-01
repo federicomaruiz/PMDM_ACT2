@@ -19,9 +19,7 @@ class WelcomeFragment : Fragment() {
 
     private lateinit var name: String
     private lateinit var category: String
-    private lateinit var tvWelcome: TextView
-    private lateinit var switchAge: Switch
-    private lateinit var btnFeed: Button
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,7 +31,6 @@ class WelcomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initComponents()
         listenBundle()
         changueSwitch()
         goToHome()
@@ -41,7 +38,7 @@ class WelcomeFragment : Fragment() {
     }
 
     private fun goToHome() {
-        btnFeed.setOnClickListener {
+        binding.btnFeed.setOnClickListener {
             val intent = Intent(requireContext(), HomeActivity::class.java)
             intent.putExtra("name", name)
             intent.putExtra("category", category)
@@ -50,13 +47,13 @@ class WelcomeFragment : Fragment() {
     }
 
     private fun changueSwitch() {
-        switchAge.setOnCheckedChangeListener { buttonView, isChecked ->
+        binding.switch1.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
                 Toast.makeText(requireContext(), "Confirmas", Toast.LENGTH_SHORT).show()
-                btnFeed.isEnabled = true
+                binding.btnFeed.isEnabled = true
             } else {
                 Toast.makeText(requireContext(), "No confirmas", Toast.LENGTH_SHORT).show()
-                btnFeed.isEnabled = false
+                binding.btnFeed.isEnabled = false
             }
         }
     }
@@ -66,15 +63,10 @@ class WelcomeFragment : Fragment() {
     * */
     private fun setName() {
         val welcomeMessage = getString(R.string.tv_title_welcome, name)
-        tvWelcome.text = welcomeMessage
+        binding.tvWelcome.text = welcomeMessage
 
     }
 
-    private fun initComponents() {
-        tvWelcome = binding.tvWelcome
-        switchAge = binding.switch1
-        btnFeed = binding.btnFeed
-    }
 
     private fun listenBundle() {
         parentFragmentManager.setFragmentResultListener("result", this) { key, bundle ->

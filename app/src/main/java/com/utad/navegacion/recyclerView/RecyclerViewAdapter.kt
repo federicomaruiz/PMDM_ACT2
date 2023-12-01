@@ -10,7 +10,7 @@ import com.utad.navegacion.databinding.ItemBinding
 
 class RecyclerViewAdapter(
 
-    private val itemList: List<New>,
+    private var itemList: List<New>,
 
     val actionClick: (titleId: String) -> Unit
 
@@ -24,6 +24,13 @@ class RecyclerViewAdapter(
     }
 
 
+    /*
+    * Mirar lo de actualizar la lista y no setearla cada vez que se modifica
+    * Tambien el Nested ScrollView
+    * */
+    fun upDateList(itemList: List<New>){
+        this.itemList = itemList
+    }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
        val item = itemList[position]

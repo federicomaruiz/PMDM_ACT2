@@ -34,7 +34,7 @@ class TechnologyNewsFragment : Fragment() {
         binding.rvTecnologia.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         val list = getTech()
-        adapter = RecyclerViewAdapter(list) {id -> navigateToDetail(id)}
+        adapter = RecyclerViewAdapter(list) { id -> navigateToDetail(id) }
         binding.rvTecnologia.adapter = adapter
 
     }
